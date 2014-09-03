@@ -1,0 +1,50 @@
+
+   
+
+     build.gradle
+    apply plugin: 'com.android.application'
+    
+    android {
+        compileSdkVersion 19
+        buildToolsVersion '20.0.0'
+        packagingOptions {
+            exclude 'META-INF/DEPENDENCIES'
+            exclude 'META-INF/LICENSE'
+            exclude 'META-INF/NOTICE'
+            exclude 'META-INF/NOTICE.txt'
+            exclude 'META-INF/LICENSE.txt'
+    
+        }
+        defaultConfig {
+            applicationId "com.peekatucorp.peekatu"
+            minSdkVersion 8
+            targetSdkVersion 19
+        }
+    
+        buildTypes {
+            release {
+                runProguard false
+                proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+            }
+        }
+    }
+    
+    dependencies {
+        compile 'com.android.support:support-v4:20.0.0+'
+        compile 'com.google.android.gms:play-services:+'
+        compile 'com.android.support:gridlayout-v7:+'
+        compile 'com.actionbarsherlock:actionbarsherlock:4.4.0@aar'
+        compile 'com.android.support:support-v4:20.0.0+'
+        compile files('libs/apache-mime4j-0.6.jar')
+        compile files('libs/httpclient-4.0.1.jar')
+        compile files('libs/httpcore-4.0.1.jar')
+        compile files('libs/httpmime-4.0.1.jar')
+        compile files('libs/mobclix.jar')
+        compile files('libs/universal-image-loader-1.8.4-with-sources.jar')
+        compile files('libs/urlimageviewhelper-1.0.4.jar')
+        compile files('libs/gcm.jar')
+        compile files('libs/android-async-http-1.4.5.jar')
+    }
+
+
+
